@@ -15,6 +15,10 @@ function ToolsUtf8() {
         setUtf8EncSrc(e.target.value);
         setUtf8EncRst(encodeURIComponent(e.target.value));
     }
+    function clear() {
+        setUtf8EncSrc('')
+        setUtf8EncRst('')
+    }
     const style = {
         paddingLeft: "10px",
         paddingRight: "10px"
@@ -26,7 +30,7 @@ function ToolsUtf8() {
         <h2>OUTPUT</h2>
         <StyledTextarea placeholder="output here" value={utf8EncRst} readOnly></StyledTextarea>
         <div>
-            <button>Clear!</button>
+            <button onClick={clear}>Clear!</button>
         </div>
     </div>;
 }
