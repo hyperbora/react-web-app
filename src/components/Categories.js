@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import Constants from '../constants'
 
 const categories = [
   {
@@ -58,7 +57,7 @@ const Categories = ({ onSelect }) => {
           key={c.name}
           activeClassName="active"
           exact={c.name === 'all'}
-          to={c.name === 'all' ? `${Constants.base}/` : `${Constants.base}/${c.name}`}
+          to={c.name === 'all' ? `/` : `/${c.name}`}
         >
           {c.text}
         </Category>

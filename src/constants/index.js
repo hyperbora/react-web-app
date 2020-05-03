@@ -1,4 +1,2 @@
-const Constants = {
-    "base": "/react-web-app"
-}
+const Constants = {}
 export default Constants

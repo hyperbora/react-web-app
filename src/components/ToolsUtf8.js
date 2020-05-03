@@ -25,6 +25,9 @@ function ToolsUtf8() {
         <StyledTextarea placeholder="input here" value={utf8EncSrc} onChange={utf8encode}></StyledTextarea>
         <h2>OUTPUT</h2>
         <StyledTextarea placeholder="output here" value={utf8EncRst} readOnly></StyledTextarea>
+        <div>
+            <button>Clear!</button>
+        </div>
     </div>;
 }
 export default ToolsUtf8;
