@@ -9,8 +9,8 @@ const categories = [
   },
   {
     name: 'utf8',
-    text: 'utf-8 enc/dec'
-  }
+    text: 'utf-8 enc/dec',
+  },
 ];
 
 const CategoriesBlock = styled.div`
@@ -49,10 +49,10 @@ const Category = styled(NavLink)`
     margin-left: 1rem;
   }
 `;
-const Categories = ({ onSelect }) => {
+const Categories = () => {
   return (
     <CategoriesBlock>
-      {categories.map(c => (
+      {categories.map((c) => (
         <Category
           key={c.name}
           activeClassName="active"
