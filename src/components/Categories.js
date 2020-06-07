@@ -11,6 +11,10 @@ const categories = [
     name: 'utf8',
     text: 'utf-8 enc/dec',
   },
+  {
+    name: 'base64',
+    text: 'base64 enc/dec',
+  },
 ];
 
 const CategoriesBlock = styled.div`
