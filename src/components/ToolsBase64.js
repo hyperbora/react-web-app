@@ -13,6 +13,7 @@ function ToolsBase64() {
   const [base64EncRst, setBase64EncRst] = useState('');
   const [base64DecSrc, setBase64DecSrc] = useState('');
   const [base64DecRst, setBase64DecRst] = useState('');
+
   function base64Encode(e) {
     setBase64EncSrc(e.target.value);
     const str = e.target.value;
@@ -26,19 +27,25 @@ function ToolsBase64() {
     );
     setBase64EncRst(result);
   }
+
   function base64Decode(e) {
     setBase64DecSrc(e.target.value);
     const str = e.target.value;
-    const result = decodeURIComponent(
-      atob(str)
-        .split('')
-        .map(function (c) {
-          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        })
-        .join('')
-    );
-    setBase64DecRst(result);
+    try {
+      const result = decodeURIComponent(
+        atob(str)
+          .split('')
+          .map(function (c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+          })
+          .join('')
+      );
+      setBase64DecRst(result);
+    } catch (error) {
+      setBase64DecRst('');
+    }
   }
+
   function clear() {
     setBase64EncSrc('');
     setBase64EncRst('');
@@ -52,33 +59,33 @@ function ToolsBase64() {
 
   return (
     <div style={style}>
-      <h2>base64 ENCODE</h2>
+      <h2> base64 ENCODE </h2>{' '}
       <StyledTextarea
         placeholder="input here"
         value={base64EncSrc}
         onChange={base64Encode}
-      ></StyledTextarea>
-      <h2>base64 ENCODE OUTPUT</h2>
+      ></StyledTextarea>{' '}
+      <h2> base64 ENCODE OUTPUT </h2>{' '}
       <StyledTextarea
         placeholder="output here"
         value={base64EncRst}
         readOnly
-      ></StyledTextarea>
-      <h2>base64 DECODE</h2>
+      ></StyledTextarea>{' '}
+      <h2> base64 DECODE </h2>{' '}
       <StyledTextarea
         placeholder="input here"
         value={base64DecSrc}
         onChange={base64Decode}
-      ></StyledTextarea>
-      <h2>base64 DECODE OUTOUT</h2>
+      ></StyledTextarea>{' '}
+      <h2> base64 DECODE OUTOUT </h2>{' '}
       <StyledTextarea
         placeholder="output here"
         value={base64DecRst}
         readOnly
-      ></StyledTextarea>
+      ></StyledTextarea>{' '}
       <div>
-        <button onClick={clear}>Clear!</button>
-      </div>
+        <button onClick={clear}> Clear! </button>{' '}
+      </div>{' '}
     </div>
   );
 }

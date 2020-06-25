@@ -1,21 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-
-const categories = [
-  {
-    name: 'all',
-    text: '전체보기',
-  },
-  {
-    name: 'utf8',
-    text: 'utf-8 enc/dec',
-  },
-  {
-    name: 'base64',
-    text: 'base64 enc/dec',
-  },
-];
+import { categories } from '../constants';
 
 const CategoriesBlock = styled.div`
   display: flex;
